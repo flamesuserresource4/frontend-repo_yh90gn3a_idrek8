@@ -1,28 +1,31 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import Highlights from './components/Highlights';
+import ModelsShowcase from './components/ModelsShowcase';
+import SpecCompare from './components/SpecCompare';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen w-full bg-black text-white">
+      <Hero />
+      <Highlights />
+      <ModelsShowcase />
+      <SpecCompare />
+
+      <footer className="border-t border-white/10 bg-neutral-950 py-10 text-sm text-neutral-400">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row sm:px-8 lg:px-10">
+          <p>
+            © {new Date().getFullYear()} LuxDrive. Crafted for enthusiasts.
+          </p>
+          <nav className="flex items-center gap-6">
+            <a href="#models" className="hover:text-white">Models</a>
+            <a href="#compare" className="hover:text-white">Compare</a>
+            <a href="#" className="hover:text-white">Contact</a>
+          </nav>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
